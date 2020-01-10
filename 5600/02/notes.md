@@ -100,6 +100,28 @@ Register conventions:
 Other place for function-call specific data is the stack.
 
 
+## Register Conventions
+
+two categories:
+
+ - Temporary registers: %rax, %rcx, %rdx, %rdi, %rsi, %r8, %r9
+   - Calling another function is expected to destroy the value in
+     each temporary register.
+   - If you want to use a temporary register after a function call,
+     you must "caller save" it.
+ - Safe registers: %rbx, %r12..15
+   - Calling another functoin will not destroy the value in
+     a safe register.
+   - If you want to use a safe register *at all*, you must follow
+     "callee save", and restore the original value before you return.
+
+
+
+
+
+
+
+
 
 
 
