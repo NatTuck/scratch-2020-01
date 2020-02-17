@@ -26,4 +26,17 @@ the barrier and shared reads only occur after, then those reads can't be a data
 race with the writes.
 
 
+## Semaphores
+
+A semaphore is an integer.
+
+ - sem_wait - decrements the integer
+   - can't decrement the integer below zero
+   - if integer would go below zero, block the process
+ - sem_post - increments the integer
+   - if anyone's blocked on the semaphore, wake them up and
+     give them another chance to decrement
+
+
+
 
