@@ -16,3 +16,5 @@ for my $file (@files) {
         system(qq{rm "$file"});
     }
 }
+
+system(qq{find . -type d -name "target"});
